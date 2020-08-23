@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong>Title:</strong>
+  <%= @movie.title %>
+</h1>
+
+<p>
+  <strong>Description:</strong>
+  <%= @movie.description %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @movie.release_date %>
+</p>
+
+<h2><strong>Reviews:</strong></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Review</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movie.reviews.each do |review| %>
+      <tr>
+        <td><%= review.content %></td>
+        <td><%= link_to 'Show', review %></td>
+        <td><%= link_to 'Edit', edit_review_path(review) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>

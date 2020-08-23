@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Loginname:</strong>
+  <%= @user.loginname %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<% if @user.image? %>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @user.image.url, class: 'avatar' %>
+</p>
+<% end %>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
